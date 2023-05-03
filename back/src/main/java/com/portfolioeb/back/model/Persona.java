@@ -20,5 +20,7 @@ public class Persona {
        private String email;
        private String ocupacion;
        private String img_bg;
+       private String about;
+       private String nac;
        
 }
