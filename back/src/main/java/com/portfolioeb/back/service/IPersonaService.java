@@ -19,4 +19,5 @@ import java.util.List;
     //metodo para encontrar
     public Persona findPerson (Long id);
     
+    public Persona authentication(String email, String password);
 }

@@ -1,4 +1,3 @@
-
 package com.portfolioeb.back.service;
 
 import com.portfolioeb.back.model.Persona;
@@ -9,13 +8,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PersonaService implements IPersonaService {
-    
+
     @Autowired
     private PersonaRepository persoRepository;
 
     @Override
     public List<Persona> getPersons() {
-        List <Persona> listaPersonas = persoRepository.findAll();
+        List<Persona> listaPersonas = persoRepository.findAll();
         return listaPersonas;
     }
 
@@ -34,6 +33,21 @@ public class PersonaService implements IPersonaService {
         Persona perso = persoRepository.findById(id).orElse(null);
         return perso;
     }
+    
+    
+    public Persona authentication(String email, String password) {
+        Persona pers = persoRepository.findByEmail(email);
+        if (pers != null && pers.getPassword().equals(password)) {
+            return pers;
 
- 
+        } else {
+            return null;
+        }
+
+    }
+
+    
+  
+
+   
 }
