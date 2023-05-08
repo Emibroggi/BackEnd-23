@@ -83,9 +83,8 @@ public class EducacionController {
 
         Educacion educacion = educacionService.getOne(id).get();
         educacion.setNombreE(dtoeducacion.getNombreE());
-        educacion.setNombreE(dtoeducacion.getDescripcionE());
-
-        educacionService.save(educacion);
+        educacion.setDescripcionE(dtoeducacion.getDescripcionE());
+                educacionService.save(educacion);
 
         return new ResponseEntity(new Mensaje("Educacion modificada"), HttpStatus.OK);
     }

@@ -42,7 +42,7 @@ public class Educacion {
         return descripcionE;
     }
 
-    public void setEducacionE(String descripcionE) {
+    public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
     
