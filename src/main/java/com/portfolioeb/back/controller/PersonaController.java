@@ -30,14 +30,7 @@ public class PersonaController {
     
      
     @PostMapping("/login")
-   /* public ResponseEntity<?> login(@RequestBody Persona pers){
-        Persona perso = persoServi.authentication(pers.getEmail() , pers.getPassword());
-        if (perso != null) {
-            return ResponseEntity.ok(perso);
-        } else{
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-        }
-    }*/
+   
     public ResponseEntity<?> login(@RequestBody Persona pers) {
         Persona perso = persoServi.authentication(pers.getEmail() , pers.getPassword());
         if (perso != null && pers.getPassword().equals(pers.getPassword())) {
